@@ -1,7 +1,8 @@
 // a program that encrypts messages using Caesar’s cipher
+// for CS50x/2014/pset2/caesar.c
 #include <cs50.h>		// for GetString()
-#include <stdio.h>		// for input & output
-#include <string.h>		// for string
+#include <stdio.h>		// for standard input & output
+#include <string.h>		// for strlen
 #include <stdlib.h>		// for atoi
 
 #define ALPHA 26
