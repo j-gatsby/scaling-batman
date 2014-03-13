@@ -4,7 +4,7 @@
 #include <stdio.h>		// for standard input & output
 #include <string.h>		// for strlen
 #include <stdlib.h>		// for atoi
-#include <ctype.h>		// for isalpha
+#include <ctype.h>		// for islower & isupper
 #define ALPHA 26
 
 int main(int argc, string argv[])
@@ -25,7 +25,7 @@ int main(int argc, string argv[])
 
 			for (int i = 0, n = strlen(input); i < n; i++)
 			{
-				if (input[i] >= 'a' && input[i] <= 'z') 
+				if (islower(input[i]))
 				{
 					char after = (((input[i] - 'a' + key) % ALPHA) + 'a'); 
 					printf("%c", after);
