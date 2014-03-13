@@ -30,7 +30,7 @@ int main(int argc, string argv[])
 					char after = (((input[i] - 'a' + key) % ALPHA) + 'a'); 
 					printf("%c", after);
 				}
-				else if (input[i] >= 'A'&& input[i] <= 'Z')
+				else if (isupper(input[i]))
 				{
 					char after = (((input[i] - 'A' + key) % ALPHA) + 'A');
 					printf("%c", after);
