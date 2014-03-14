@@ -1,20 +1,19 @@
-// a program that encrypts messages using Caesar’s cipher
-// for CS50x/2014/pset2/caesar.c
+// a program that encrypts messages using Vigenere cipher
+// for CS50x/2014/pset2/vigenere.c
 #include <cs50.h>		// for GetString()
 #include <stdio.h>		// for standard txt & output
 #include <string.h>		// for strlen
 #include <stdlib.h>		// for atoi
-#include <ctype.h>		// for islower & isupper
+#include <ctype.h>		// for islower & isupper & isaplha
 
 #define ALPHA 26
-
-int fail;
-int pass;
 
 int main(int argc, string argv[])
 {
 	int a = argc;
 	string keyword = argv[a - 1];
+	int fail = 0;
+	int pass = 0;
 	for (int i = 0, n = strlen(keyword); i < n; i++)
 		{
 			if (!isalpha(keyword[i])) fail++;
@@ -23,7 +22,7 @@ int main(int argc, string argv[])
 		if ((a != 2) ||  (fail > 0)) 
 		{
 			printf("You must enter a single keyword containing only letters, output the program name!\n");
-			printf("ex.= jharvard $ ./caesar salad\n");
+			printf("ex.= jharvard $ ./vigenere jordan\n");
 			printf("Try again, buddy.\n");
 			return 1;
 		}
@@ -38,8 +37,8 @@ int main(int argc, string argv[])
 					keyvalue[letter] = (toupper(keyword[letter])) - 'A';
 				}
 			
-			string txt = GetString();							// [0] [1] [2] [3] [4] [5] 
-			int txtlen = strlen(txt);							// [b] [a] [c] [o] [n] [\0]
+			string txt = GetString();							 
+			int txtlen = strlen(txt);					
 			for (int i = 0; i < txtlen; i++)
 			{
 				if (islower(txt[i]))
