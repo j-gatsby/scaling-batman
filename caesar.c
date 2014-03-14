@@ -5,14 +5,23 @@
 #include <string.h>		// for strlen
 #include <stdlib.h>		// for atoi
 #include <ctype.h>		// for islower & isupper
+
 #define ALPHA 26
+
+int fail;
+int pass;
 
 int main(int argc, string argv[])
 {
 	int a = argc;
 	string k = argv[a - 1];
 	int key = (int)atoi(k);
-		if ((a != 2) || (key < 0)) 
+	for (int i = 0, n = strlen(k); i < n; i++)
+		{
+			if (!isdigit(k[i])) fail++;
+			else pass++;
+		}
+		if ((a != 2) || (key < 0) || fail > 0) 
 		{
 			printf("You must enter a single, non-negative int to use as the key, after the program name!\n");
 			printf("ex.= jharvard $ ./caesar 13\n");
